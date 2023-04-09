@@ -4,6 +4,7 @@ from typing import List, Tuple
 
 from PIL import Image
 from PIL.ImageDraw import Draw
+from PIL import ImageFont
 
 
 Coords = List[List[int]]  # EasyOCR format
@@ -19,6 +20,8 @@ class PolygonDrawer:
         self._clean_image = image.copy()
         self._image = image
         self._draw = Draw(image)
+        self._draw.font = ImageFont.truetype("./roboto.ttf",
+                                             12, encoding='UTF-8')
 
     @staticmethod
     def coords_to_box(coords: Coords) -> Box:
