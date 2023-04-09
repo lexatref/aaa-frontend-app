@@ -13,7 +13,7 @@ WORKDIR /app
 RUN python -m pip install --no-cache-dir -r requirements.txt -r dev-requirements.txt
 
 # pre download model
-RUN python -c "import easyocr; easyocr.Reader(['en'])"
+RUN python -c "import easyocr; easyocr.Reader(['en','ru'])"
 
 COPY . /app
 

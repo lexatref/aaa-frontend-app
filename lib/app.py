@@ -22,6 +22,7 @@ def create_app() -> Application:
         loader=jinja2.FileSystemLoader(lib / "templates"),
     )
     app["model"] = create_model()
+    app["modelru"] = create_model(["ru"])
     return app
 
 
